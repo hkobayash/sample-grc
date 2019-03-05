@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package sample;
+
+service ImpositionService {
+    rpc CreateItem(CreateItemRequest) returns (CreateItemResponse);
+}
+
+message ImpositionItem {
+    int32 id = 1;
+    string bucket = 2;
+    string object_key = 3;
+}
+
+message CreateItemRequest {
+    string bucket = 1;
+    string object_key = 2;
+}
+
+message CreateItemResponse {
+    ImpositionItem item = 1;
+}
