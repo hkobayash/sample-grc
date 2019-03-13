@@ -3,7 +3,7 @@ default: test
 LDFLAGS := -ldflags="-w -s"
 
 build:
-	GO111MODULE=on go build $(LDFLAGS)
+	GO111MODULE=on go build -o server cmd/server/main.go
 
 install-protoc:
 ifeq ($(shell command -v protoc-gen-go 2> /dev/null),)
